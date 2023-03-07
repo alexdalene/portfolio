@@ -1,0 +1,10 @@
+@use '../abstracts/variables' as a;
+
+.projects {
+    min-height: 100vh;
+    grid-area: content;
+    background-color: a.$neutral-0;
+    background-image: url(../images/gradient-background.jpg);
+    background-position: center;
+    background-size: cover;
+}

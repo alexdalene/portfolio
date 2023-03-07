@@ -1,0 +1,101 @@
+@use '../abstracts' as a;
+
+.sidebar {
+    background-color: a.$neutral-0;
+    padding: a.$margin-sm;
+    display: grid;
+    grid-area: sidebar;
+    gap: a.$margin-sm;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    position: fixed;
+    min-height: 100vh;
+    width: 425px;
+    
+    nav {
+        grid-area: 2 / 2 / 2 / 4;
+        width: 150px;
+    }
+
+    .sidebar-links {
+        font-family: 'PP Neue Montreal Bold', sans-serif;
+        font-size: a.$font-sm;
+        margin: 0;
+        padding: 0;
+
+        li {
+            &:nth-child(3) {
+                margin-top: 1rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: a.$neutral-100;
+                transition: 300ms ease;
+    
+                &:hover {
+                    color: a.$neutral-70;
+                }
+            }
+
+            #contact {
+                background-color: a.$neutral-100;
+                color: a.$neutral-0;
+                padding: 0 0.5rem;
+                transition: 300ms ease;
+    
+                &:hover {
+                    background-color: transparent;
+                    outline: 1px solid white;
+                    color: white;
+                }
+            }
+
+            .active {
+                &::after {
+                    animation: fade-in 500ms ease;
+                    content: "x";
+                    margin-left: 1rem;
+                    color: a.$accent-color;
+                }
+            }
+        }
+    }
+
+    .sidebar-info {
+        color: a.$neutral-100;
+        grid-area: 4 / 1 / 4 / 6;
+        justify-content: start;
+        align-items: end;
+        display: flex;
+        gap: 1rem;
+        line-height: 1;
+        overflow: hidden;
+
+        h4 {
+            font-family: 'PP Woodlands Bold', serif;
+            font-size: a.$font-sm;
+            overflow: hidden;
+            animation: push-in-from-bottom 500ms ease;
+            animation-delay: 500ms;
+            transition-delay: 500ms;
+        }
+
+        p {
+            font-family: 'PP Woodlands Light', serif;
+            font-size: a.$font-xsm;
+            overflow: hidden;
+            animation: push-in-from-bottom 500ms ease;
+            animation-delay: 600ms;
+            transition-delay: 600ms;
+
+            &:nth-child(2) {
+                overflow: hidden;
+                animation: push-in-from-bottom 500ms ease;
+                animation-delay: 700ms;
+                transition-delay: 700ms;
+            }
+        }
+        
+    }
+}

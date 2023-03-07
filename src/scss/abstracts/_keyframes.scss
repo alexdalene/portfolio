@@ -1,0 +1,42 @@
+@keyframes push-in-from-bottom {
+    from {
+        transform: translateY(+100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: visible;
+    }
+}
+
+@keyframes push-in-from-right {
+    0% {
+        transform: translateX(+100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes border {
+    0% {
+        outline-style: none none none none;
+    }
+    33% {
+        outline-style: solid solid none none;
+    }
+    66% {
+        outline-style: solid solid solid none;
+    }
+    100% {
+        outline-style: solid solid solid solid;
+    }
+}
+  

@@ -1,0 +1,108 @@
+@use '../abstracts' as a;
+@use '../abstracts/keyframes' as key;
+
+.hero {
+    grid-area: content;
+    background-color: a.$neutral-0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, auto);
+    padding: a.$margin-lg;
+    gap: a.$margin-lg;
+    justify-content: end;
+    align-content: start;
+
+    .hero-developer {
+        color: a.$neutral-100;
+        grid-area: 1 / 1 / 1 / 7;
+        text-align: end;
+        line-height: 1;
+        overflow: hidden;
+
+        h1 {
+            font-family: 'PP Woodlands Bold', serif;
+            font-size: a.$font-display;
+            animation: push-in-from-bottom 800ms ease;
+            overflow: hidden;
+        }
+
+        p {
+            font-family: 'Cutive Mono', monospace;
+            font-size: a.$font-xsm;
+            animation: push-in-from-bottom 1s ease;
+            overflow: hidden;
+        }
+    }
+
+    .hero-designer {
+        color: a.$neutral-100;
+        grid-area: 2 / 1 / 2 / 7;
+        font-family: 'PP Woodlands Light', serif;
+        font-size: 4.4rem;
+        line-height: 0.8;
+        text-align: end;
+        overflow: hidden;
+        display: flex;
+        justify-content: end;
+        gap: 2.4rem;
+
+        h2 {
+            overflow: hidden;
+            animation: push-in-from-right 900ms ease;
+        }
+
+        .hero-and {
+            color: a.$neutral-100;
+            font-family: 'PP Woodlands Light', serif;
+            font-size: 9.4rem;
+            line-height: 1;
+            align-self: center;
+            animation: fade-in 700ms ease;
+        }
+    }
+
+    .hero-about {
+        color: a.$neutral-100;
+        grid-area: 3 / 1 / 3 / 7;
+        width: 350px;
+        place-self: end;
+        font-family: 'PP Neue Montreal Book', sans-serif;
+        font-size: a.$font-xsm;
+        text-align: end;
+        animation: fade-in 850ms ease;
+
+        p {
+            &:nth-child(2) {
+                margin-top: 0.5rem;
+                animation: fade-in 1s ease;
+                margin-bottom: 2.4rem;
+            }
+
+            b {
+                font-family: 'PP Neue Montreal Bold';
+            }
+        }
+
+        a {
+            animation: fade-in 1s ease;
+            color: a.$neutral-100;
+            font-size: a.$font-md;
+            text-decoration: none;
+            outline: 1px solid white;
+            padding: 0.5rem;
+            transition: 300ms ease;
+
+            &:hover {
+                background-color: a.$neutral-100;
+                color: a.$neutral-0;
+            }
+        }
+    }
+}
+
+#background-img {
+    background-image: url(../images/background-img.jpg);
+    background-position: 50% 35%;
+    background-attachment: fixed;
+}

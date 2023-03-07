@@ -1,0 +1,25 @@
+// colors
+$neutral-0: hsl(0, 0%, 0%);
+$neutral-70: hsl(0, 0%, 70%);
+$neutral-100: hsl(0, 0%, 100%);
+$accent-color: hsl(0, 93%, 73%);
+
+// spacing
+$margin-sm: 1.6rem;
+$margin-md: 2rem;
+$margin-lg: 2.4rem;
+
+// font-sizes
+$font-xsm: 1.2rem;
+$font-sm: 1.6rem;
+$font-md: 2rem;
+$font-lg: 2.4rem;
+$font-display: 5.4rem;
+
+// breakpoints
+$breakpoints: (
+    small: 600px,
+    medium: 840px,
+    large: 1030px,
+    x-large: 1440px,
+)

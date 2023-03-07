@@ -1,0 +1,7 @@
+@use '../abstracts' as a;
+
+.grid {
+    display: grid;
+    grid-template-columns: 425px 1fr;
+    grid-template-areas: "sidebar content";
+}

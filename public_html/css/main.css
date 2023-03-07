@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+@keyframes push-in-from-bottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: visible;
+  }
+}
+@keyframes push-in-from-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes border {
+  0% {
+    outline-style: none none none none;
+  }
+  33% {
+    outline-style: solid solid none none;
+  }
+  66% {
+    outline-style: solid solid solid none;
+  }
+  100% {
+    outline-style: solid solid solid solid;
+  }
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: 62.5%;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make scrolling smooth */
+html, body {
+  scroll-behavior: smooth;
+}
+html:focus-within, body:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "PP Woodlands Bold";
+  src: url(../fonts/pp-woodlands/PPWoodland-Bold.otf);
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "PP Woodlands Light";
+  src: url(../fonts/pp-woodlands/PPWoodland-Ultralight.otf);
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "PP Neue Montreal Book";
+  src: url(../fonts/pp-montreal/PPNeueMontreal-Book.otf);
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "PP Neue Montreal Bold";
+  src: url(../fonts/pp-montreal/PPNeueMontreal-Bold.otf);
+  font-style: normal;
+  font-display: fallback;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 425px 1fr;
+  grid-template-areas: "sidebar content";
+}
+
+.sidebar {
+  background-color: hsl(0, 0%, 0%);
+  padding: 1.6rem;
+  display: grid;
+  grid-area: sidebar;
+  gap: 1.6rem;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  position: fixed;
+  min-height: 100vh;
+  width: 425px;
+}
+.sidebar nav {
+  grid-area: 2/2/2/4;
+  width: 150px;
+}
+.sidebar .sidebar-links {
+  font-family: "PP Neue Montreal Bold", sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+.sidebar .sidebar-links li:nth-child(3) {
+  margin-top: 1rem;
+}
+.sidebar .sidebar-links li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  transition: 300ms ease;
+}
+.sidebar .sidebar-links li a:hover {
+  color: hsl(0, 0%, 70%);
+}
+.sidebar .sidebar-links li #contact {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  padding: 0 0.5rem;
+  transition: 300ms ease;
+}
+.sidebar .sidebar-links li #contact:hover {
+  background-color: transparent;
+  outline: 1px solid white;
+  color: white;
+}
+.sidebar .sidebar-links li .active::after {
+  animation: fade-in 500ms ease;
+  content: "x";
+  margin-left: 1rem;
+  color: hsl(0, 93%, 73%);
+}
+.sidebar .sidebar-info {
+  color: hsl(0, 0%, 100%);
+  grid-area: 4/1/4/6;
+  justify-content: start;
+  align-items: end;
+  display: flex;
+  gap: 1rem;
+  line-height: 1;
+  overflow: hidden;
+}
+.sidebar .sidebar-info h4 {
+  font-family: "PP Woodlands Bold", serif;
+  font-size: 1.6rem;
+  overflow: hidden;
+  animation: push-in-from-bottom 500ms ease;
+  animation-delay: 500ms;
+  transition-delay: 500ms;
+}
+.sidebar .sidebar-info p {
+  font-family: "PP Woodlands Light", serif;
+  font-size: 1.2rem;
+  overflow: hidden;
+  animation: push-in-from-bottom 500ms ease;
+  animation-delay: 600ms;
+  transition-delay: 600ms;
+}
+.sidebar .sidebar-info p:nth-child(2) {
+  overflow: hidden;
+  animation: push-in-from-bottom 500ms ease;
+  animation-delay: 700ms;
+  transition-delay: 700ms;
+}
+
+.content-container {
+  grid-area: content;
+}
+
+.projects {
+  min-height: 100vh;
+  grid-area: content;
+  background-color: hsl(0, 0%, 0%);
+  background-image: url(../images/gradient-background.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.hero {
+  grid-area: content;
+  background-color: hsl(0, 0%, 0%);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, auto);
+  padding: 2.4rem;
+  gap: 2.4rem;
+  justify-content: end;
+  align-content: start;
+}
+.hero .hero-developer {
+  color: hsl(0, 0%, 100%);
+  grid-area: 1/1/1/7;
+  text-align: end;
+  line-height: 1;
+  overflow: hidden;
+}
+.hero .hero-developer h1 {
+  font-family: "PP Woodlands Bold", serif;
+  font-size: 5.4rem;
+  animation: push-in-from-bottom 800ms ease;
+  overflow: hidden;
+}
+.hero .hero-developer p {
+  font-family: "Cutive Mono", monospace;
+  font-size: 1.2rem;
+  animation: push-in-from-bottom 1s ease;
+  overflow: hidden;
+}
+.hero .hero-designer {
+  color: hsl(0, 0%, 100%);
+  grid-area: 2/1/2/7;
+  font-family: "PP Woodlands Light", serif;
+  font-size: 4.4rem;
+  line-height: 0.8;
+  text-align: end;
+  overflow: hidden;
+  display: flex;
+  justify-content: end;
+  gap: 2.4rem;
+}
+.hero .hero-designer h2 {
+  overflow: hidden;
+  animation: push-in-from-right 900ms ease;
+}
+.hero .hero-designer .hero-and {
+  color: hsl(0, 0%, 100%);
+  font-family: "PP Woodlands Light", serif;
+  font-size: 9.4rem;
+  line-height: 1;
+  align-self: center;
+  animation: fade-in 700ms ease;
+}
+.hero .hero-about {
+  color: hsl(0, 0%, 100%);
+  grid-area: 3/1/3/7;
+  width: 350px;
+  place-self: end;
+  font-family: "PP Neue Montreal Book", sans-serif;
+  font-size: 1.2rem;
+  text-align: end;
+  animation: fade-in 850ms ease;
+}
+.hero .hero-about p:nth-child(2) {
+  margin-top: 0.5rem;
+  animation: fade-in 1s ease;
+  margin-bottom: 2.4rem;
+}
+.hero .hero-about p b {
+  font-family: "PP Neue Montreal Bold";
+}
+.hero .hero-about a {
+  animation: fade-in 1s ease;
+  color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+  text-decoration: none;
+  outline: 1px solid white;
+  padding: 0.5rem;
+  transition: 300ms ease;
+}
+.hero .hero-about a:hover {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+}
+
+#background-img {
+  background-image: url(../images/background-img.jpg);
+  background-position: 50% 35%;
+  background-attachment: fixed;
+}
+
+/*# sourceMappingURL=main.css.map */
