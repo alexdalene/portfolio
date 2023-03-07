@@ -7,4 +7,47 @@
     background-image: url(../images/gradient-background.jpg);
     background-position: center;
     background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, auto);
+    padding: a.$margin-lg;
+    gap: a.$margin-lg;
+
+    .project {
+        grid-column: span 2;
+        grid-row: span 3;
+        background-color: a.$neutral-0;
+    }
+
+    .projects-title-container {
+        font-size: a.$font-lg;
+        grid-area: 1 / 1 / 1 / 7;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'PP Woodlands Light', serif;
+        line-height: 1;
+        overflow: hidden;
+
+        .projects-title:nth-child(1) {
+            opacity: 0.2;
+        }
+        .projects-title:nth-child(2) {
+            opacity: 0.5;
+        }
+    }
+
+    .projects-title-bottom {
+        grid-area: 6 / 1 / 6 / 7;
+        align-items: end;
+
+        .projects-title:nth-child(3) {
+            opacity: 0.2;
+        }
+        .projects-title:nth-child(2) {
+            opacity: 0.5;
+        }
+        .projects-title:nth-child(1) {
+            opacity: 1;
+        }
+    }
 }

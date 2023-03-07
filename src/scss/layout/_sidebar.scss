@@ -70,31 +70,15 @@
         display: flex;
         gap: 1rem;
         line-height: 1;
-        overflow: hidden;
 
         h4 {
             font-family: 'PP Woodlands Bold', serif;
             font-size: a.$font-sm;
-            overflow: hidden;
-            animation: push-in-from-bottom 500ms ease;
-            animation-delay: 500ms;
-            transition-delay: 500ms;
         }
 
         p {
             font-family: 'PP Woodlands Light', serif;
             font-size: a.$font-xsm;
-            overflow: hidden;
-            animation: push-in-from-bottom 500ms ease;
-            animation-delay: 600ms;
-            transition-delay: 600ms;
-
-            &:nth-child(2) {
-                overflow: hidden;
-                animation: push-in-from-bottom 500ms ease;
-                animation-delay: 700ms;
-                transition-delay: 700ms;
-            }
         }
         
     }
