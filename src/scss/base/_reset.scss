@@ -31,7 +31,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-size: 62.5%;
-  overscroll-behavior: none;
+  overscroll-behavior: contain;
 }
 
 /* A elements that don't have a class get default styles */
