@@ -71,6 +71,7 @@
             gap: a.$margin-sm;
             text-align: center;
             justify-content: center;
+            overflow: visible;
         }
 
         h2 {
@@ -81,6 +82,7 @@
                 font-size: a.$font-xl;
                 text-align: end;
                 overflow: visible;
+                animation: none;
             }
         }
 

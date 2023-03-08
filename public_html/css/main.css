@@ -342,6 +342,7 @@ html:focus-within, body:focus-within {
     gap: 1.6rem;
     text-align: center;
     justify-content: center;
+    overflow: visible;
   }
 }
 .hero .hero-designer h2 {
@@ -353,6 +354,7 @@ html:focus-within, body:focus-within {
     font-size: 2.8rem;
     text-align: end;
     overflow: visible;
+    animation: none;
   }
 }
 .hero .hero-designer .hero-and {
