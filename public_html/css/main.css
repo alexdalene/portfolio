@@ -311,7 +311,7 @@ html:focus-within, body:focus-within {
 }
 @media (max-width: 600px) {
   .hero .hero-developer h1 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
 }
 .hero .hero-developer p {
@@ -322,7 +322,7 @@ html:focus-within, body:focus-within {
 }
 @media (max-width: 600px) {
   .hero .hero-developer p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 .hero .hero-designer {
@@ -350,8 +350,9 @@ html:focus-within, body:focus-within {
 }
 @media (max-width: 600px) {
   .hero .hero-designer h2 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     text-align: end;
+    overflow: visible;
   }
 }
 .hero .hero-designer .hero-and {

@@ -39,7 +39,7 @@
             overflow: hidden;
 
             @include m.respond-to('x-small') {
-                font-size: a.$font-lg;
+                font-size: a.$font-xl;
             }
         }
 
@@ -50,7 +50,7 @@
             overflow: hidden;
 
             @include m.respond-to('x-small') {
-                font-size: 0.7rem;
+                font-size: 0.8rem;
             }
         }
     }
@@ -78,8 +78,9 @@
             animation: push-in-from-right 900ms ease;
             
             @include m.respond-to('x-small') {
-                font-size: a.$font-lg;
+                font-size: a.$font-xl;
                 text-align: end;
+                overflow: visible;
             }
         }
 
