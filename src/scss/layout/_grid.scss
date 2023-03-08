@@ -1,7 +1,12 @@
 @use '../abstracts' as a;
+@use '../abstracts/mixins' as m;
 
 .grid {
     display: grid;
     grid-template-columns: 425px 1fr;
     grid-template-areas: "sidebar content";
+
+    @include m.respond-to('x-small') {
+        grid-template-columns: 1fr;
+    }
 }

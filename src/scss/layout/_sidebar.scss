@@ -1,4 +1,5 @@
 @use '../abstracts' as a;
+@use '../abstracts/mixins' as m;
 
 .sidebar {
     background-color: a.$neutral-0;
@@ -11,7 +12,11 @@
     position: fixed;
     min-height: 100vh;
     width: 425px;
-    
+
+    @include m.respond-to('x-small') {
+        display: none;
+    }
+
     nav {
         grid-area: 2 / 2 / 2 / 4;
         width: 150px;

@@ -18,8 +18,9 @@ $font-display: 5.4rem;
 
 // breakpoints
 $breakpoints: (
-    small: 600px,
-    medium: 840px,
-    large: 1030px,
-    x-large: 1440px,
+    'x-small': (max-width: 600px),
+    'small': (min-width: 600px),
+    'medium': (min-width: 840px),
+    'large': (min-width: 1030px),
+    'x-large': (min-width: 1440px),
 )

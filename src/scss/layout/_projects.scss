@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as a;
+@use '../abstracts/mixins' as m;
 
 .projects {
     min-height: 100vh;
@@ -13,9 +14,15 @@
     padding: a.$margin-lg;
     gap: a.$margin-lg;
 
+    @include m.respond-to('x-small') {
+        padding: a.$margin-sm;
+        gap: a.$margin-sm;
+        grid-template-columns: 1fr;
+    }
+
     .project {
         grid-column: span 2;
-        grid-row: span 3;
+        grid-row: span 4;
         background-color: a.$neutral-0;
     }
 
@@ -27,6 +34,10 @@
         font-family: 'PP Woodlands Light', serif;
         line-height: 1;
         overflow: hidden;
+
+        @include m.respond-to('x-small') {
+            display: none;
+        }
 
         .projects-title:nth-child(1) {
             opacity: 0.2;

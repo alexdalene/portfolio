@@ -1,5 +1,6 @@
 @use '../abstracts' as a;
 @use '../abstracts/keyframes' as key;
+@use '../abstracts/mixins' as m;
 
 .hero {
     grid-area: content;
@@ -13,6 +14,13 @@
     justify-content: end;
     align-content: start;
 
+    @include m.respond-to('x-small') {
+        padding: a.$margin-sm;
+        gap: a.$margin-sm;
+        grid-template-columns: 1fr;
+        place-content: center;
+    }
+
     .hero-developer {
         color: a.$neutral-100;
         grid-area: 1 / 1 / 1 / 7;
@@ -20,11 +28,19 @@
         line-height: 1;
         overflow: hidden;
 
+        @include m.respond-to('x-small') {
+            text-align: center;
+        }
+
         h1 {
             font-family: 'PP Woodlands Bold', serif;
             font-size: a.$font-display;
             animation: push-in-from-bottom 800ms ease;
             overflow: hidden;
+
+            @include m.respond-to('x-small') {
+                font-size: a.$font-lg;
+            }
         }
 
         p {
@@ -32,6 +48,10 @@
             font-size: a.$font-xsm;
             animation: push-in-from-bottom 1s ease;
             overflow: hidden;
+
+            @include m.respond-to('x-small') {
+                font-size: 0.7rem;
+            }
         }
     }
 
@@ -45,11 +65,22 @@
         overflow: hidden;
         display: flex;
         justify-content: end;
-        gap: 2.4rem;
+        gap: a.$margin-lg;
+
+        @include m.respond-to('x-small') {
+            gap: a.$margin-sm;
+            text-align: center;
+            justify-content: center;
+        }
 
         h2 {
             overflow: hidden;
             animation: push-in-from-right 900ms ease;
+            
+            @include m.respond-to('x-small') {
+                font-size: a.$font-lg;
+                text-align: end;
+            }
         }
 
         .hero-and {
@@ -59,6 +90,10 @@
             line-height: 1;
             align-self: center;
             animation: fade-in 700ms ease;
+
+            @include m.respond-to('x-small') {
+                font-size: a.$font-lg;
+            }
         }
     }
 
@@ -71,6 +106,13 @@
         font-size: a.$font-xsm;
         text-align: end;
         animation: fade-in 850ms ease;
+
+        @include m.respond-to('x-small') {
+            width: 100%;
+            font-size: 1rem;
+            place-self: center;
+            text-align: center;
+        }
 
         p {
             &:nth-child(2) {
@@ -103,6 +145,7 @@
 
 #background-img {
     background-image: url(../images/background-img.jpg);
-    background-position: 50% 35%;
+    background-position: center;
     background-attachment: fixed;
+    background-size: cover;
 }
